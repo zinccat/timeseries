@@ -12,7 +12,7 @@ def bm(key: jnp.ndarray, total_time: float = 1.0, num_timestep: int = 100) -> jn
     dW = jax.random.normal(key, (num_timestep,))
     dW = dW.at[0].set(0.0)
     W = jnp.cumsum(sqrt_dt * dW)
-    t = jnp.arange(1, num_timestep + 1) * total_time / num_timestep
+    t = jnp.arange(num_timestep) * total_time / num_timestep
     return t, W
 
 if __name__ == '__main__':
