@@ -1,7 +1,6 @@
 import jax.numpy as jnp
 from jax import random
 import jax
-from matplotlib import pyplot as plt
 from functools import partial
 
 # brownian motion
@@ -16,6 +15,7 @@ def bm(key: jnp.ndarray, total_time: float = 1.0, num_timestep: int = 100) -> jn
     return t, W
 
 if __name__ == '__main__':
+    from matplotlib import pyplot as plt
     key = random.PRNGKey(0)
     total_time = 1.0
     num_timestep = 100
